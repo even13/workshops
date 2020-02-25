@@ -25,5 +25,9 @@ describe Library do
   end
 
   it 'can list all the books on a specific subject' do
+    selected_books = @library.all_books_by_subject('Ruby')
+    expect(selected_books.length).to eq(2)
+    expect(selected_books).to include( {title: 'Learn Ruby The Hard Way', author: 'Zed Shaw', subject: 'Ruby'} )
+    expect(selected_books).to include( {title: 'The Well Grounded Rubyist', author: 'Sandi Metz', subject: 'Ruby'} )
   end
 end
