@@ -1,6 +1,6 @@
 # Debugging in Ruby
 
-There are two exercises in this workshop, each exercise is program that has a number of bugs. You have to find them, and fix them. You have to do this as systematically as possible:
+There are two exercises in this workshop, each exercise is a program that has a number of bugs. You have to find them, and fix them. You have to do this as systematically as possible:
 
 - Tighten the loop (find the exact line the bug is coming from)
 
@@ -42,7 +42,7 @@ There are two main types of error you will see in these examples:
 
 2. The code doesn't do what the tests expect it to. This means that the code works, but it doesn't give the output expected by the tests.
 
-You will see both of these errors in this example. Each type of error gives a different kind of error message. Before you start to resolve a bug, try to identify it's type.
+You will see both of these errors in this example. Each type of error gives a different kind of error message. Before you start to resolve a bug, try to identify its type.
 
 
 <details><summary>Post Challenge</summary>
