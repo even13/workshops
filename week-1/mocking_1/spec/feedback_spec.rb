@@ -2,10 +2,13 @@ require 'feedback'
 require 'date'
 
 describe Feedback do
-  subject(:feedback) { Feedback.new(10, Date.today) }
+  let(:date) { "2020-02-27" }
+  subject(:feedback) { Feedback.new(10, date) }
 
   describe '#happiness' do
     it 'returns the happiness score' do
+      p date
+      p Date.today
       expect(feedback.happiness).to eq 10
     end
   end
