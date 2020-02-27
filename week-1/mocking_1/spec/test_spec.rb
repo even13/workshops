@@ -9,12 +9,13 @@ describe Test do
       Answer.new(1, 1)
     ]
   end
+  let(:date) { "2020-02-27" }
 
-  subject(:test) { Test.new(Date.today, answers) }
+  subject(:test) { Test.new(date, answers) }
 
   describe '#pretty_date_taken' do
     it 'returns the date the test was taken, as a string' do
-      expect(test.pretty_date_taken).to eq Date.today.to_s
+      expect(test.pretty_date_taken).to eq date.to_s
     end
   end
 

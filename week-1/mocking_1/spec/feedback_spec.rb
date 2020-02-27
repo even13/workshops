@@ -7,8 +7,6 @@ describe Feedback do
 
   describe '#happiness' do
     it 'returns the happiness score' do
-      p date
-      p Date.today
       expect(feedback.happiness).to eq 10
     end
   end
