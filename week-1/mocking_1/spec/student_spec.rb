@@ -49,10 +49,6 @@ describe Student do
       allow(test_1).to receive(:score) { 1 }
       allow(test_2).to receive(:score) { 1 }
       
-      # test_1 = Test.new(date, [answer_1])
-      # test_2 = Test.new(date, [answer_2])
-      
-      # p "test_2: #{test_2}"
       student = Student.new(tests: [test_1, test_2])
 
       expect(student.test_scores).to eq({ "#{ date.to_s }" => [1, 1] })
