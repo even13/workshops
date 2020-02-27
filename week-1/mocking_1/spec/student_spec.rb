@@ -3,6 +3,7 @@ require 'test'
 require 'feedback'
 
 describe Student do
+  let(:date) { "2020-02-27" }
   subject(:student) { Student.new }
 
   describe '#full_name' do
@@ -19,8 +20,8 @@ describe Student do
 
   describe '#happiness' do
     it 'returns the average happiness reported' do
-      feedback_1 = Feedback.new(4, Date.today)
-      feedback_2 = Feedback.new(4, Date.today)
+      feedback_1 = Feedback.new(4, date)
+      feedback_2 = Feedback.new(4, date)
       student = Student.new(feedbacks: [feedback_1, feedback_2])
 
       expect(student.happiness).to eq 4
@@ -33,11 +34,11 @@ describe Student do
 
   describe '#test_scores' do
     it 'returns all test scores' do
-      test_1 = Test.new(Date.today, [Answer.new(5, 5)])
-      test_2 = Test.new(Date.today, [Answer.new(6, 6)])
+      test_1 = Test.new(date, [Answer.new(5, 5)])
+      test_2 = Test.new(date, [Answer.new(6, 6)])
       student = Student.new(tests: [test_1, test_2])
 
-      expect(student.test_scores).to eq({ "#{ Date.today.to_s }" => [1, 1] })
+      expect(student.test_scores).to eq({ "#{ date.to_s }" => [1, 1] })
     end
 
     it 'defaults to being empty' do
