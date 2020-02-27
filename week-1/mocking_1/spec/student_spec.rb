@@ -6,6 +6,8 @@ describe Student do
   let(:date) { "2020-02-27" }
   let(:feedback_1) { double :feedback  }
   let(:feedback_2) { double :feedback }
+  let(:answer_1) { double :answer }
+  let(:answer_2) { double :answer }
   subject(:student) { Student.new }
 
   describe '#full_name' do
@@ -38,8 +40,10 @@ describe Student do
 
   describe '#test_scores' do
     it 'returns all test scores' do
-      test_1 = Test.new(date, [Answer.new(5, 5)])
-      test_2 = Test.new(date, [Answer.new(6, 6)])
+      allow(answer_1).to receive(:correct?) { true }
+      allow(answer_2).to receive(:correct?) { true }
+      test_1 = Test.new(date, [answer_1])
+      test_2 = Test.new(date, [answer_2])
       student = Student.new(tests: [test_1, test_2])
 
       expect(student.test_scores).to eq({ "#{ date.to_s }" => [1, 1] })
