@@ -1,8 +1,8 @@
 require 'bike'
 
 describe Bike do
+  subject(:bike) { described_class.new }
   it "reports newly created bike is working" do
-    bike = Bike.new
-    expect(bike.working?).to eq(true)
+    expect(bike).to be_working
   end
 end
