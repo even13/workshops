@@ -9,8 +9,8 @@ class StruggleTableFlipperApp < Sinatra::Base
     erb :index
   end
 
-  get "/flipped_struggle" do
-    @flipped_struggle = StruggleTableFlipper.new(params[:the_struggle]).flipped_struggle
+  post "/flipped_struggle" do
+    @flipped_struggle = StruggleTableFlipper.new(params[:struggle]).flipped_struggle
     erb :flipped_struggle
   end
 
